@@ -1,0 +1,145 @@
+.site-footer {
+  background: #462512;
+  color: #ffffff;
+  padding: clamp(2rem, 4vw, 2.75rem) clamp(1rem, 4vw, 2.5rem);
+}
+
+.site-footer__inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.site-footer__brand {
+  display: block;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-footer__logo {
+  width: clamp(120px, 18vw, 174px);
+  height: auto;
+  display: block;
+}
+
+.site-footer__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(1rem, 3vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__nav a {
+  color: #ffffff;
+  font-size: clamp(0.8125rem, 1.3vw, 0.9375rem);
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.site-footer__nav a:hover {
+  text-decoration: underline;
+}
+
+.site-footer__rule {
+  width: 100%;
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.site-footer__copy {
+  margin: 0;
+  max-width: 52rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 1.5rem;
+  }
+
+  .site-footer__meta {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .site-footer__nav {
+    justify-content: flex-start;
+  }
+
+  .site-footer__copy {
+    text-align: center;
+  }
+}
+
+.mobile-contact-section {
+  display: none;
+}
+
+
+@media screen and (max-width: 767px) {
+  .mobile-contact-section {
+    display: flex;
+    width: 100%;
+    min-height: 143px;
+    background: #FFF1E6;
+    border: 1px solid #FFDDC2;
+    border-radius: 40px 40px 0 0;
+    box-sizing: border-box;
+    margin: 0;
+    position: static;
+  }
+
+  .mobile-contact-item {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #4D2C19;
+    font-family: "Figtree", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 130%;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .mobile-contact-item + .mobile-contact-item {
+    border-left: 1px solid #FFDDC2;
+  }
+
+  .mobile-contact-item svg {
+    flex-shrink: 0;
+    display: block;
+  }
+}

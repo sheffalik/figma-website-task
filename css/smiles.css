@@ -1,0 +1,149 @@
+.smiles {
+  background: var(--surface-white);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+  overflow-x: clip;
+}
+
+.smiles__inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+}
+
+.smiles__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.smiles__title {
+  margin: 0 0 0.75rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.smiles__lead {
+  margin: 0;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.smiles__viewport {
+  width: 100%;
+}
+
+.smiles__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.smile-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.smile-card__media {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1a1a1a;
+  aspect-ratio: 4 / 3;
+}
+
+.smile-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.smile-card__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0 0.15rem;
+}
+
+.smile-card__name {
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.smile-card__city {
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: var(--brand-orange);
+  white-space: nowrap;
+}
+
+/* Tablet / phone: horizontal swipe */
+@media (max-width: 1024px) {
+  .smiles {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .smiles__header {
+    padding-left: clamp(1rem, 4vw, 2.5rem);
+    padding-right: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .smiles__viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+
+  .smiles__viewport:focus-visible {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 2px;
+  }
+
+  .smiles__grid {
+    display: flex;
+    grid-template-columns: none;
+    width: max-content;
+    gap: 1rem;
+    padding: 0 clamp(1rem, 4vw, 2.5rem) 0.75rem;
+  }
+
+  .smile-card {
+    flex: 0 0 calc(100vw - 3.5rem);
+    width: calc(100vw - 3.5rem);
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .smile-card {
+    flex-basis: calc(100vw - 2.75rem);
+    width: calc(100vw - 2.75rem);
+    max-width: none;
+  }
+}

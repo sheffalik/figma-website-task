@@ -1,0 +1,191 @@
+.lead-form-card {
+  width: min(var(--form-width), 100%);
+  max-width: 100%;
+  min-height: 450px;
+  min-width: 0;
+  background: var(--surface-cream);
+  border: 1px solid var(--border-peach);
+  border-top: none;
+  padding: 24px 40px;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1025px) {
+  .lead-form-card {
+    border-top: 1px solid var(--border-peach);
+    border-left: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lead-form-card {
+    width: 100%;
+    min-height: 0;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-peach);
+    padding: 24px clamp(1rem, 5vw, 40px);
+  }
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100%;
+}
+
+.lead-form__title {
+  margin: 0;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: var(--text-heading);
+}
+
+.lead-form__lead {
+  margin: 0;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #474747;
+}
+
+.field {
+  display: block;
+}
+
+.field input {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 16px;
+  border: 1px solid var(--border-peach);
+  border-radius: var(--input-radius);
+  background: var(--surface-white);
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--text-heading);
+}
+
+.field input::placeholder {
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: var(--text-muted);
+}
+
+.field input:focus {
+  outline: 2px solid var(--brand-orange);
+  outline-offset: 1px;
+}
+
+.field input:user-invalid:not(:placeholder-shown) {
+  border-color: #c44;
+}
+
+.captcha-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+.captcha-row__input {
+  min-width: 0;
+}
+
+.captcha-row__input input {
+  border-radius: var(--input-radius) 0 0 var(--input-radius);
+  border-right: none;
+  max-width: 100%;
+}
+
+.captcha-row__code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  padding: 0 clamp(12px, 3vw, 20px);
+  background: var(--brand-brown);
+  color: #fff;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  border-radius: 0 var(--input-radius) var(--input-radius) 0;
+  user-select: none;
+}
+
+.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: var(--text-body);
+  cursor: pointer;
+}
+
+.consent input {
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brand-orange);
+}
+
+.consent a {
+  color: var(--text-link);
+  text-decoration: underline;
+}
+
+.btn--submit {
+  width: 100%;
+  height: 38px;
+  margin-top: auto;
+  border: none;
+  border-radius: var(--btn-radius);
+  background: var(--brand-orange);
+  color: #fff;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.visually-hidden-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "clove-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Clove Dental landing page — Section 1",
+  "scripts": {
+    "dev": "live-server --port=5173 --wait=100",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
